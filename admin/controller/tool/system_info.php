@@ -18,28 +18,6 @@ class ControllerToolSystemInfo extends Controller {
 			'separator' => ' <span class="separator">&#187;</span> '
 		);
 		
-		/* $this->load->model('setting/store');
-		
-		$settings = array(
-			'config_name',
-			'config_owner',
-			'config_email',
-			'config_title',
-			'config_seo_url',
-			'config_template',
-			'config_language',
-			'config_currency',
-			'config_currency_auto',
-			'config_guest_checkout',
-			'config_invoice_prefix',
-			'config_mail_protocol',
-			'config_alert_mail',
-			'config_account_mail'
-		);
-		foreach ($settings as $setting) {
-				$this->data[$setting] = $this->config->get($setting);
-		} */
-		
 		$this->data['token'] = $this->session->data['token'];
 		
 		$this->template = 'tool/system_info.tpl';
@@ -47,6 +25,14 @@ class ControllerToolSystemInfo extends Controller {
 			'common/header',	
 			'common/footer'	
 		);
+		
+		$this->response->setOutput($this->render());
+	}
+	
+	public function phpInfo() {
+		$this->data['phpinfo'] = phpinfo();
+		
+		$this->template = 'tool/system_php_info.tpl';
 		
 		$this->response->setOutput($this->render());
 	}

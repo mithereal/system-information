@@ -1,9 +1,9 @@
 /*
-* Name: Blog Manager
-* Version: 1.0
-* Author: Echothemes
+* Name: System Information
+* Version: 1.1
+* Author: EchoThemes
 * Author URL: http://www.echothemes.com
-* Copyright (c) 2011 - 2012  Echothemes. All right Reserved
+* Copyright (c) 2011 - 2012  EchoThemes. All right Reserved
 */
 
 /* ---------- [Basic] ---------- */
@@ -86,9 +86,9 @@ b, strong { color:#333; }
 		.version.orange { color:#e45910; }
 		.version.red { color:#a00; }
 	#updateChangelog { overflow:hidden; font-size:11px; color:#444; margin:15px 0 10px 10px; padding-top:10px; border-top:2px solid #c8c8c8; }
-		#updateChangelog p { margin-bottom:5px; }
+		#updateChangelog p { font-size:12px; font-weight:bold; margin-bottom:10px; }
 		#updateChangelog ul { margin-left:14px; }
-		#updateChangelog li { padding-left:12px; background:url(../image/systeminfo/arrow.gif) no-repeat 0 3px; }
+			/* #updateChangelog li { padding-left:12px; background:url(../image/systeminfo/arrow.gif) no-repeat 0 3px; } */
 	
 /* ---------- [ Footer ] ---------- */
 #footer { display:none; }

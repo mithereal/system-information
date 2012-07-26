@@ -5,7 +5,7 @@ $_['heading_title']			= 'System Information';
 //=========== Menu
 $_['menu_system_info']  	= 'System Info';
 $_['menu_php_settings']  	= 'PHP Settings';
-$_['menu_dir_permission']  = 'Dir Permission';
+$_['menu_dir_permission']  = 'Permissions';
 $_['menu_about']  			= 'About';
 
 //=========== Text
@@ -20,10 +20,13 @@ $_['text_root_path']			= 'Root Path';
 
 $_['text_php_version']		= 'PHP Version';
 $_['text_req_php_version']	= '>= 5.0';
+$_['text_safe_mode']			= 'Safe Mode';
 $_['text_register_globals']= 'Register Globals';
 $_['text_magic_quotes']		= 'Magic Quotes GPC';
+$_['text_allow_url_fopen']	= 'Allow Url Fopen';
 $_['text_file_uploads']		= 'File Uploads';
 $_['text_session_start']	= 'Session Auto Start';
+$_['text_session_cookies']	= 'Cookies';
 
 $_['text_mysql']				= 'MySQL';
 $_['text_gd']					= 'GD';
@@ -41,7 +44,8 @@ $_['text_setting']			= 'Setting';
 $_['text_required']			= 'Required';
 $_['text_current']			= 'Current';
 $_['text_extenisons']		= 'Extensions';
-$_['text_directory']			= 'Directory';
+$_['text_directories']		= 'Directories';
+$_['text_files']				= 'Files';
 $_['text_permission']		= 'Permission';
 
 $_['text_name']				= 'Product Name';
@@ -51,9 +55,10 @@ $_['text_author_url']		= 'Author URL';
 $_['text_documentation']	= 'Documentation';
 $_['text_support']			= 'Support';
 $_['text_ticket_support']	= 'Ticket Support';
+$_['text_unavailable']		= 'File Unavailable';
 
 //== App Info
-$_['product_version']		= '1.0.0';
+$_['product_version']		= '1.1';
 $_['text_check_version']	= 'Check Version';
 $_['text_noupdate']			= 'Up to date!';
 $_['text_update']				= '<blink>New update available!</blink>';

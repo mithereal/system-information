@@ -62,9 +62,13 @@
 							<td><?php echo $text_root_path; ?></td>
 							<td class="left">: <?php echo $_SERVER["DOCUMENT_ROOT"]; ?></td>
 						</tr>
+						<tr>
+							<td><?php echo 'Full phpInfo'; ?></td>
+							<td class="left">: <a href="<?php echo $this->url->link('tool/system_info/phpInfo', 'token=' . $token, 'SSL'); ?>" target="_blank">phpInfo</a></td>
+						</tr>
 					</table>
 				</div>
-				
+		
 				<div id="serverSetting">
 					<table class="et-table et-info">
 						<tr>
@@ -80,6 +84,12 @@
 							<td><?php echo (phpversion() >= '5.0') ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
 						</tr>
 						<tr>
+							<td><?php echo $text_safe_mode; ?></td>
+							<td><?php echo $text_off; ?></td>
+							<td><?php echo (ini_get('safe_mode')) ? '<span class="bad"><blink>'.$text_on.'</blink></span>' : $text_off; ?></td>
+							<td><?php echo (!ini_get('sefe_mode')) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
+						</tr>
+						<tr>
 							<td><?php echo $text_register_globals; ?></td>
 							<td><?php echo $text_off; ?></td>
 							<td><?php echo (ini_get('register_globals')) ? '<span class="bad"><blink>'.$text_on.'</blink></span>' : $text_off; ?></td>
@@ -88,8 +98,20 @@
 						<tr>
 							<td><?php echo $text_magic_quotes;?></td>
 							<td><?php echo $text_off; ?></td>
-							<td><?php echo (ini_get('magic_quotes_gpc')) ? '<span class="bad"><blink>'.$text_on.'</blink></span>' : $text_off; ?></td>
-							<td><?php echo (!ini_get('magic_quotes_gpc')) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
+							<td><?php echo (ini_get('magic_quotes_gpc') || get_magic_quotes_gpc()) ? '<span class="bad"><blink>'.$text_on.'</blink></span>' : $text_off; ?></td>
+							<td><?php echo (!ini_get('magic_quotes_gpc') || !get_magic_quotes_gpc()) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
+						</tr>
+						<tr>
+							<td><?php echo $text_session_start;?></td>
+							<td><?php echo $text_off; ?></td>
+							<td><?php echo (ini_get('session_auto_start')) ? '<span class="bad"><blink>'.$text_on.'</blink></span>' : $text_off; ?></td>
+							<td><?php echo (!ini_get('session_auto_start')) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
+						</tr>
+						<tr>
+							<td><?php echo $text_allow_url_fopen;?></td>
+							<td><?php echo $text_on; ?></td>
+							<td><?php echo (ini_get('allow_url_fopen')) ? $text_on : '<span class="bad"><blink>'.$text_off.'</blink></span>'; ?></td>
+							<td><?php echo (ini_get('allow_url_fopen')) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
 						</tr>
 						<tr>
 							<td><?php echo $text_file_uploads;?></td>
@@ -98,10 +120,10 @@
 							<td><?php echo (ini_get('file_uploads')) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
 						</tr>
 						<tr>
-							<td><?php echo $text_session_start;?></td>
-							<td><?php echo $text_off; ?></td>
-							<td><?php echo (ini_get('session_auto_start')) ? '<span class="bad"><blink>'.$text_on.'</blink></span>' : $text_off; ?></td>
-							<td><?php echo (!ini_get('session_auto_start')) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
+							<td><?php echo $text_session_cookies;?></td>
+							<td><?php echo $text_on; ?></td>
+							<td><?php echo (ini_get('session.use_cookies')) ? $text_on : $text_off; ?></td>
+							<td><?php echo (ini_get('session.use_cookies')) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
 						</tr>
 					</table>
 					<table class="et-table et-info">
@@ -153,9 +175,9 @@
 				<div id="dirPermission">
 					<table class="et-table et-permission">
 						<tr>
-							<td width="465px"><?php echo $text_directory; ?></td>
-							<td><?php echo $text_permission; ?></td>
-							<td width="100px"><?php echo $text_status; ?></td>
+							<td><?php echo $text_directories; ?></td>
+							<td width="110px"><?php echo $text_permission; ?></td>
+							<td width="110px"><?php echo $text_status; ?></td>
 						</tr>
 						<tr>
 							<td><?php echo str_replace($_SERVER['DOCUMENT_ROOT'],'',(str_replace('\\','/',DIR_IMAGE))); ?></td>
@@ -188,13 +210,57 @@
 							<td><?php echo is_writable(DIR_LOGS) ? '<span class="good">Writable</span>' : '<span class="bad"><blink>Unwritable</blink></span>'; ?></td>
 						</tr>
 						<tr>
-							<td><?php echo 'vqmod/vqcache/' ?></td>
+							<td><?php echo '/vqmod/vqcache/'; ?></td>
 							<td><?php echo substr(sprintf('%o', fileperms('../vqmod/vqcache')), -3); ?></td>
 							<td><?php echo is_writable('../vqmod/vqcache') ? '<span class="good">Writable</span>' : '<span class="bad"><blink>Unwritable</blink></span>'; ?></td>
 						</tr>
 					</table>
+					
+					<table class="et-table et-permission">
+						<tr>
+							<td><?php echo $text_files; ?></td>
+							<td width="110px"><?php echo $text_permission; ?></td>
+							<td width="110px"><?php echo $text_status; ?></td>
+						</tr>
+						<tr>
+							<?php $file_error_logs = DIR_LOGS . $this->config->get('config_error_filename'); ?>
+							<td><?php echo str_replace($_SERVER['DOCUMENT_ROOT'],'',(str_replace('\\','/',$file_error_logs))); ?></td>
+							<td><?php 
+								if (file_exists($file_error_logs)) {
+									echo substr(sprintf('%o', fileperms($file_error_logs)), -3);
+								} else {
+									echo $text_unavailable;
+								}
+							?></td>
+							<td><?php 
+								if (file_exists($file_error_logs)) {
+									echo is_writable($file_error_logs) ? '<span class="good">Writable</span>' : '<span class="bad"><blink>Unwritable</blink></span>'; 
+								} else {
+									echo $text_unavailable;
+								}
+							?></td>
+						</tr>
+						<tr>
+							<?php $file_vqmods_logs = '../vqmod/vqmod.log'; ?>
+							<td><?php echo '/vqmod/vqmod.log'; ?></td>
+							<td><?php 
+								if (file_exists($file_vqmods_logs)) {
+									echo substr(sprintf('%o', fileperms($file_vqmods_logs)), -3);
+								} else {
+									echo $text_unavailable;
+								}
+							?></td>
+							<td><?php 
+								if (file_exists($file_vqmods_logs)) {
+									echo is_writable($file_vqmods_logs) ? '<span class="good">Writable</span>' : '<span class="bad"><blink>Unwritable</blink></span>'; 
+								} else {
+									echo $text_unavailable;
+								}
+							?></td>
+						</tr>
+					</table>
 				</div>
-				
+
 				<div id="about">
 					<table class="table-form">
 						<tr>

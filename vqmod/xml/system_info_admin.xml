@@ -1,6 +1,6 @@
 <modification>
 	<id>System Information</id>
-	<version>1.0.0</version>
+	<version>1.1</version>
 	<vqmver>2.1.6</vqmver>
 	<author>EchoThemes.com</author>
 	<file name="admin/view/template/common/header.tpl">
