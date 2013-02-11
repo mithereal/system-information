@@ -1,6 +1,6 @@
 /*
 * Name: System Information
-* Version: 1.1
+* Version: 1.2
 * Author: EchoThemes
 * Author URL: http://www.echothemes.com
 * Copyright (c) 2011 - 2012  EchoThemes. All right Reserved
@@ -26,7 +26,7 @@ a, a:visited { color:#01459a; cursor:pointer; text-decoration:none; }
 b, strong { color:#333; }
 
 /* ---------- [General] ---------- */
-#content, td, th, input, textarea, select, option, div { color:#222; font-size:11px; font-family:"Lucida Grande",Verdana,sans-serif; }
+#content, td, th, input, textarea, select, option, div { color:#333; font-size:11px; font-family:"Lucida Grande",Verdana,sans-serif; }
 #content { background:#f8f8f8; min-width:1000px; padding-bottom:25px; font-weight:350; line-height:16px; }
 #menu { z-index:1000; } /* Fix Opencart menu */
 .container { width:910px; margin:35px auto; }
@@ -62,23 +62,26 @@ b, strong { color:#333; }
 #et-content { background:#fff; border-left:1px solid #c2c2c2; margin-left:180px; padding:10px 20px; min-height:450px; -moz-border-radius:0 0 6px 0; -webkit-border-radius:0 0 6px 0; border-radius:0 0 6px 0; }
 
 /* ---------- [Content: General] ---------- */
-#et-content .et-table { width:100%; cursor:default; margin:5px 0; }
-	#et-content .et-table + .et-table { margin:15px 0; }
-	#et-content .et-table tr { border-bottom: 1px dotted #ccc; }
-		#et-content .et-table tr td { text-align: center; }
-		#et-content .et-table tr:hover td { background:#eee; }
-		#et-content .et-table tr:first-child { border:none; }
-			#et-content .et-table tr:first-child td { background: #ddd!important; font-size:13px; font-weight:bold; }
-	#et-content .et-table td { padding:5px 10px; vertical-align:middle; }
-		#et-content .et-table tr td:first-child { text-align:left; padding:10px; }
-	#et-content .et-sysinfo tr td:last-child { text-align:left; }
-	#et-content .et-permission .good { color:#1b6f00; }
+.et-table { width:100%; cursor:default; margin:5px 0; table-layout:fixed; }
+   .et-table + .et-table { margin:15px 0; }
+   .et-table td { padding:5px 10px; vertical-align:middle; word-wrap:break-word; }
+		.et-table thead tr { border-bottom: 2px solid #aaa; }
+		.et-table thead td { background:#ddd; text-align:center; padding:7px 10px; font-size:13px; font-weight:bold; }
+      .et-table tbody tr { border-bottom: 1px dotted #ccc; }
+         .et-table tbody tr:hover td { background:#eee; }
+	.et-table .good { color:#1b6f00; }
+	.tbl-systemInfo td, .tbl-permission td { padding:9px 10px; }
+	.tbl-serverSetting td + td, .tbl-permission td + td, .tbl-security td + td + td { text-align:center; }
+   .tbl-security tbody td + td { font-size:10px; color:#333; }
 
 /* Content: About */
-.table-form { width:100%; }
-	.table-form tr { border-bottom:1px dotted #ccc; }
-	.table-form td { padding:8px 10px; vertical-align:top; }
-		.table-form tr td:first-child { width:175px; }
+#securityLoading, #securityResult { display:none; }
+
+/* Content: About */
+.tbl-about { width:100%; }
+	.tbl-about tr { border-bottom:1px dotted #ccc; }
+	.tbl-about td { padding:8px 10px; vertical-align:top; }
+		.tbl-about tr td:first-child { width:175px; }
 	#versionStatus { font-size:10px; padding-left:35px; }
 		#versionStatus.loading { background:url(../image/systeminfo/loading.gif) no-repeat 12px 1px; }
 	.version { font-size:10px; }
@@ -92,6 +95,6 @@ b, strong { color:#333; }
 	
 /* ---------- [ Footer ] ---------- */
 #footer { display:none; }
-	#et-footer { color:#666; font-size:11px; font-family:"Lucida Grande",Verdana,sans-serif; width:910px; text-align:center; margin:20px auto 0; line-height:15px; text-shadow:0px 1px 1px #eee; z-index:108; }
+	#et-footer { color:#666; font-size:11px; font-family:"Lucida Grande",Verdana,sans-serif; width:910px; text-align:center; margin:15px auto 0; line-height:15px; text-shadow:0px 1px 1px #eee; z-index:108; }
 		#et-footer a { color:#e45910; }
 		#et-footer a:hover { text-decoration:underline; }
