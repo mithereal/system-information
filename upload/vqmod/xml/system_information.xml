@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>System Information</id>
+	<version>1.3</version>
+	<vqmver>2.4.1</vqmver>
+	<author>EchoThemes.com</author>
+    <file name="system/library/db.php">
+		<operation>
+			<search position="before"><![CDATA[function getLastId()]]></search>
+			<add><![CDATA[
+			public function getServerInfo() {
+				return $this->driver->getServerInfo();
+			}
+			
+			public function getHostInfo() {
+				return $this->driver->getHostInfo();
+			}
+			]]></add>
+		</operation>
+	</file>
+	<file name="system/database/mysql.php">
+		<operation>
+			<search position="before"><![CDATA[function getLastId()]]></search>
+			<add><![CDATA[
+			public function getServerInfo() {
+				if ($this->link) {
+					return mysql_get_server_info();
+				}
+			}
+			
+			public function getHostInfo() {
+				if ($this->link) {
+					return mysql_get_host_info();
+				}
+			}
+			]]></add>
+		</operation>
+	</file>
+	<file name="system/database/mysqli.php">
+		<operation>
+			<search position="before"><![CDATA[function getLastId()]]></search>
+			<add><![CDATA[
+			public function getServerInfo() {
+				return $this->link->server_info;
+			}
+			
+			public function getHostInfo() {
+				return $this->link->host_info;
+			}
+			]]></add>
+		</operation>
+	</file>
+</modification>

@@ -15,8 +15,9 @@ $_['text_oc_version']			= 'Opencart Version';
 $_['text_operating_sys']		= 'Operating System';
 $_['text_web_server']			= 'Web Server';
 $_['text_web_host']				= 'Web Host Info';
-$_['text_mysql_version']		= 'MySQL Server Version';
-$_['text_mysql_host']			= 'MySQL Host Info';
+$_['text_db_driver']			= 'Database Driver';
+$_['text_db_version']			= 'Database Server Version';
+$_['text_db_host']				= 'Database Host Info';
 $_['text_root_path']				= 'Root Path';
 $_['text_full_phpinfo']			= 'Full phpInfo';
 $_['text_phpinfo']				= 'phpInfo';
@@ -32,7 +33,7 @@ $_['text_file_uploads']			= 'File Uploads';
 $_['text_session_start']		= 'Session Auto Start';
 $_['text_session_cookies']		= 'Cookies';
 
-$_['text_mysql']					= 'MySQL';
+$_['text_database']					= 'Database (%s)';
 $_['text_gd']						= 'GD';
 $_['text_curl']					= 'Curl';
 $_['text_fsock']					= 'Fsock';
@@ -69,7 +70,7 @@ $_['text_link']					= '<a href="http://%s" target="_blank" title="%s">%s</a>';
 $_['text_link_secure']			= '<a href="https://%s" target="_blank" title="%s">%s</a>';
 
 //== App Info
-$_['product_version']			= '1.2';
+$_['product_version']			= '1.3';
 $_['text_check_version']		= 'Check Version';
 $_['text_noupdate']				= 'Up to date!';
 $_['text_update']					= '<blink>New update available!</blink>';

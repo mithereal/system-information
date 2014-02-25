@@ -39,7 +39,7 @@
                   <tbody>
                      <tr>
                         <td><?php echo $text_oc_version; ?></td>
-                        <td class="left">: <?php echo sprintf(VERSION); ?></td>
+                        <td class="left">: <?php echo VERSION; ?></td>
                      </tr>
                      <tr>
                         <td><?php echo $text_operating_sys; ?></td>
@@ -54,17 +54,31 @@
                         <td class="left">: <?php echo $_SERVER['HTTP_HOST']; ?></td>
                      </tr>
                      <tr>
-                        <td><?php echo $text_mysql_version; ?></td>
-                        <td class="left">: <?php printf(mysql_get_server_info()); ?></td>
-                     </tr>
-                     <tr>
-                        <td><?php echo $text_mysql_host; ?></td>
-                        <td class="left">: <?php printf(mysql_get_host_info()); ?></td>
-                     </tr>
-                     <tr>
                         <td><?php echo $text_root_path; ?></td>
                         <td class="left">: <?php echo $_SERVER["DOCUMENT_ROOT"]; ?></td>
                      </tr>
+                     <tr>
+                        <td>&nbsp;</td>
+                        <td></td>
+                     </tr>
+                     <?php if (in_array(DB_DRIVER, array('mysql', 'mysqli'))) { ?>
+                        <tr>
+                           <td><?php echo $text_db_driver; ?></td>
+                           <td class="left">: <?php echo strtoupper(DB_DRIVER); ?></td>
+                        </tr>
+                        <tr>
+                           <td><?php echo $text_db_version; ?></td>
+                           <td class="left">: <?php echo $this->db->getServerInfo(); ?></td>
+                        </tr>
+                        <tr>
+                           <td><?php echo $text_db_host; ?></td>
+                           <td class="left">: <?php echo $this->db->getHostInfo(); ?></td>
+                        </tr>
+                        <tr>
+                           <td>&nbsp;</td>
+                           <td></td>
+                        </tr>
+                     <?php } ?>
                      <tr>
                         <td><?php echo $text_full_phpinfo; ?></td>
                         <td class="left">: <a href="<?php echo $this->url->link('tool/system_info/phpInfo', 'token=' . $token, 'SSL'); ?>" target="_blank"><?php echo $text_phpinfo; ?></a></td>
@@ -152,12 +166,14 @@
                      </tr>
                   </thead>
                   <tbody>
-                     <tr>
-                        <td><?php echo $text_mysql; ?></td>
-                        <td><?php echo $text_on; ?></td>
-                        <td><?php echo extension_loaded('mysql') ? 'On' : '<span class="bad"><blink>'.$text_off.'</blink></span>'; ?></td>
-                        <td><?php echo extension_loaded('mysql') ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
-                     </tr>
+                     <?php if (in_array(DB_DRIVER, array('mysql', 'mysqli'))) { ?>
+                         <tr>
+                            <td><?php echo sprintf($text_database, strtoupper(DB_DRIVER)); ?></td>
+                            <td><?php echo $text_on; ?></td>
+                            <td><?php echo extension_loaded(DB_DRIVER) ? 'On' : '<span class="bad"><blink>'.$text_off.'</blink></span>'; ?></td>
+                            <td><?php echo extension_loaded(DB_DRIVER) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
+                         </tr>
+                     <?php } ?>
                      <tr>
                         <td><?php echo $text_gd; ?></td>
                         <td><?php echo $text_on; ?></td>
