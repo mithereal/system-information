@@ -20,8 +20,8 @@ class ControllerToolSystemInfo extends Controller {
       
       $this->data['link_author']          = sprintf($this->data['text_link'], $this->data['dev_url'], $this->data['dev_name'], $this->data['dev_name']);
       $this->data['link_author2']         = sprintf($this->data['text_link'], $this->data['dev_url'], $this->data['dev_name'], $this->data['dev_url']);
-      $this->data['link_documentation']   = sprintf($this->data['text_link'], $this->data['dev_url_docs'], '', $this->data['heading_title'] . ' ' . $this->data['text_documentation']);
-      $this->data['link_support']         = sprintf($this->data['text_link_secure'], $this->data['dev_url_support'], '', $this->data['text_support']);
+      $this->data['link_documentation']   = sprintf($this->data['text_link_secure'], $this->data['dev_url_docs'], '', $this->data['heading_title'] . ' ' . $this->data['text_documentation']);
+      $this->data['link_support']         = sprintf($this->data['text_link'], $this->data['dev_url_support'], '', $this->data['text_support']);
       $this->data['link_copyright']       = sprintf($this->data['dev_copyright'], $this->data['heading_title'], '2011 - ' . date('Y'), $this->data['link_author']);
       $this->data['oc_footer']            = sprintf($this->language->get('oc_footer'), VERSION);
       

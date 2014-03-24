@@ -108,7 +108,7 @@
                         <td><?php echo $text_safe_mode; ?></td>
                         <td><?php echo $text_off; ?></td>
                         <td><?php echo (ini_get('safe_mode')) ? '<span class="bad"><blink>'.$text_on.'</blink></span>' : $text_off; ?></td>
-                        <td><?php echo (!ini_get('sefe_mode')) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
+                        <td><?php echo (!ini_get('safe_mode')) ? '<img src="view/image/systeminfo/good.png" alt="Good" />' : '<img src="view/image/systeminfo/bad.png" alt="Bad" />'; ?></td>
                      </tr>
                      <tr>
                         <td><?php echo $text_register_globals; ?></td>

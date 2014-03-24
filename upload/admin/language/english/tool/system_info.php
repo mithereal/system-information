@@ -70,7 +70,7 @@ $_['text_link']					= '<a href="http://%s" target="_blank" title="%s">%s</a>';
 $_['text_link_secure']			= '<a href="https://%s" target="_blank" title="%s">%s</a>';
 
 //== App Info
-$_['product_version']			= '1.3';
+$_['product_version']			= '1.3.1';
 $_['text_check_version']		= 'Check Version';
 $_['text_noupdate']				= 'Up to date!';
 $_['text_update']					= '<blink>New update available!</blink>';
@@ -80,8 +80,8 @@ $_['text_failconnect']			= 'Unable connect to update server!';
 //== Dev Info
 $_['dev_name']						= 'EchoThemes';
 $_['dev_url']						= 'www.echothemes.com';
-$_['dev_url_docs']				= 'www.echothemes.com/docs-system-information.html';
-$_['dev_url_support']			= 'www.echothemes.com/tickets.html';
+$_['dev_url_docs']				= 'octave.atlassian.net/wiki/display/EXTDOCS/System+Information';
+$_['dev_url_support']			= 'forum.opencart.com/viewtopic.php?f=119&t=68202';
 $_['dev_copyright']				= '%s &copy; %s %s. All right reserved.<br/>';
 $_['oc_footer']					= '<a href="http://www.opencart.com">OpenCart</a> &copy; 2009-' . date('Y') . ' All Rights Reserved.<br />Version %s';
 ?>
