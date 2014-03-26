@@ -70,7 +70,7 @@ $_['text_link']					= '<a href="http://%s" target="_blank" title="%s">%s</a>';
 $_['text_link_secure']			= '<a href="https://%s" target="_blank" title="%s">%s</a>';
 
 //== App Info
-$_['product_version']			= '1.3.1';
+$_['product_version']			= '1.3.2';
 $_['text_check_version']		= 'Check Version';
 $_['text_noupdate']				= 'Up to date!';
 $_['text_update']					= '<blink>New update available!</blink>';
