@@ -1,0 +1,32 @@
+body {
+    font-size: 12px;
+}
+.uk-container {
+    width: 960px;
+    min-width: 960px;
+}
+#et-content {
+    font-size: 13px;
+}
+
+.app-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.app-title h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+.app-title .by-et {
+    margin-top: 15px;
+    margin-bottom: -15px;
+}
+
+.uk-section {
+  font-size: 20px;
+  line-height: 24px;
+}
+* + .uk-section {
+    margin-top: 45px;
+}
