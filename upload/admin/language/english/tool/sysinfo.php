@@ -1,7 +1,7 @@
 <?php
 // Extensions Info
 $_['ext_name']                  = 'System Information';
-$_['ext_version']               = '2.0.0';
+$_['ext_version']               = '2.1.0';
 
 //=== Section
 $_['section_site_info']         = 'Site Info';
@@ -33,6 +33,7 @@ $_['text_root_path']            = 'Root Path';
 $_['text_db_driver']            = 'Database Driver';
 $_['text_db_version']           = 'Database Server Version';
 $_['text_db_host']              = 'Database Host Info';
+$_['text_full_phpinfo']         = 'Full PHP configuration info:';
 
 $_['text_php_version']          = 'PHP Version';
 $_['text_req_php_version']      = '>= 5.3';

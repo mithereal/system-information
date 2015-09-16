@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modification>
     <id>System Information</id>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <vqmver>2.5.0</vqmver>
     <author>EchoThemes.com</author>
 
     <file path="admin/controller/common/menu.php">
-        <operation info="BM2 extra body class">
+        <operation info="Add menu">
             <search position="before"><![CDATA[$this->load->view('common/menu.tpl', $data)]]></search>
             <add><![CDATA[
             $data['text_sysinfo']   = 'System Information';

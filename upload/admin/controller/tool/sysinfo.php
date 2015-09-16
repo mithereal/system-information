@@ -12,9 +12,9 @@ class ControllerToolSysinfo extends Controller
         //=== Document
         $this->document->setTitle($this->language->get('ext_name'));
 
-         $this->document->addStyle('view/stylesheet/sysinfo/css/uikit-echothemes.min.css?v=1.2.0', 'stylesheet');
-         $this->document->addStyle('view/stylesheet/sysinfo/sysinfo.css?v='.$this->language->get('ext_version'), 'stylesheet');
-         $this->document->addScript('view/stylesheet/sysinfo/js/uikit.min.js?v=2.8.0');
+        $this->document->addStyle('view/stylesheet/sysinfo/css/uikit-echothemes.min.css?v=1.2.0', 'stylesheet');
+        $this->document->addStyle('view/stylesheet/sysinfo/sysinfo.css?v='.$this->language->get('ext_version'), 'stylesheet');
+        $this->document->addScript('view/stylesheet/sysinfo/js/uikit.min.js?v=2.8.0');
 
         //=== Breadcrumbs
         $data['breadcrumbs']    = array();
@@ -31,6 +31,7 @@ class ControllerToolSysinfo extends Controller
 
         //=== Content
         $data['token']          = $this->session->data['token'];
+        $data['url_phpinfo']    = $this->url->link('tool/sysinfo/phpinfo', 'token=' . $this->session->data['token'], 'SSL');
         
         $data['stores']         = $this->model_setting_store->getTotalStores() + 1;
         $data['ssl']            = $this->config->get('config_secure');
@@ -50,7 +51,7 @@ class ControllerToolSysinfo extends Controller
         //=== H-MVC
         $data['header']     = $this->load->controller('common/header');
         $data['menu']       = $this->load->controller('common/column_left');
-        $data['footer']     = $this->load->controller('common/footer');;
+        $data['footer']     = $this->load->controller('common/footer');
 
         //=== Render
         $template   = 'tool/sysinfo.tpl';
@@ -58,4 +59,8 @@ class ControllerToolSysinfo extends Controller
 
         $this->response->setOutput($render);
     }
+
+    public function phpinfo() {
+        phpinfo();
+   }
 }

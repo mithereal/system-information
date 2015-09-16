@@ -74,13 +74,15 @@
                     <td><?php echo $ftp ? $text_enable : $text_disable; ?></td>
                 </tr>
                 <tr>
-                    <td><?php echo $text_fraud; ?></td>
-                    <td><?php echo $fraud ? $text_enable : $text_disable; ?></td>
-                </tr>
-                <tr>
                     <td><?php echo $text_currency; ?></td>
                     <td><?php echo $currency ? $text_enable : $text_disable; ?></td>
                 </tr>
+                <?php if (!is_null($fraud)) { ?>
+                    <tr>
+                        <td><?php echo $text_fraud; ?></td>
+                        <td><?php echo $fraud ? $text_enable : $text_disable; ?></td>
+                    </tr>
+                <?php } ?>
                 <tr>
                     <td><?php echo $text_error_display; ?></td>
                     <td><?php echo $error_display ? $text_enable : $text_disable; ?></td>
@@ -94,6 +96,9 @@
     </div>
 
     <h2 class="uk-section"><?php echo $section_server_info; ?></h2>
+    <div class="uk-float-right uk-text-small" style="margin-top:-30px">
+        <?php echo $text_full_phpinfo; ?> <a href="<?php echo $url_phpinfo; ?>" target="_blank">phpnfo()</a>
+    </div>
 
     <table class="uk-table uk-table-striped uk-table-hover">
         <thead>
@@ -119,11 +124,11 @@
                 <td><?php echo $text_root_path; ?></td>
                 <td><?php echo $_SERVER["DOCUMENT_ROOT"]; ?></td>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
             <?php if (in_array(DB_DRIVER, array('mysql', 'mysqli'))) { ?>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
                 <tr>
                     <td><?php echo $text_db_driver; ?></td>
                     <td><?php echo strtoupper(DB_DRIVER); ?></td>
