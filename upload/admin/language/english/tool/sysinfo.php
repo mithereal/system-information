@@ -1,7 +1,7 @@
 <?php
 // Extensions Info
 $_['ext_name']                  = 'System Information';
-$_['ext_version']               = '2.1.0';
+$_['ext_version']               = '2.1.1';
 
 //=== Section
 $_['section_site_info']         = 'Site Info';
