@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>System Information - EchoThemes</title>
+  <link href="docs/image/favicon.png" rel="icon" />
+
+  <link rel="stylesheet" type="text/css" href="docs/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="docs/css/bootstrap-extra.min.css" />
+  <link rel="stylesheet" type="text/css" href="docs/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="docs/css/highlight.github.css" />
+  <link rel="stylesheet" type="text/css" href="docs/css/docs.css" />
+
+  <script type="text/javascript" src="docs/js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="docs/js/highlight.pack.js"></script>
+
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target="#navigation">
+<div class="container docs-wrapper">
+  <div class="row">
+    <div class="col-xs-12">
+      <img src="docs/image/logo.png" alt="EchoThemes Logo">
+    </div>
+  </div>
+  <div class="panel panel-default docs-panel">
+    <div class="panel-heading">
+      <h1>System Information - Installation</h1>
+    </div>
+    <div class="panel-body">
+      <h4 class="bs-margin-top-xs">Table of Contents</h4>
+      <ul class="list-unstyled docs-list">
+        <li><a href="#install">Install</a></li>
+        <li><a href="#update">Updates</a></li>
+        <li><a href="#changelog">Changelog</a></li>
+      </ul>
+
+      <div class="alert alert-info">
+        For complete documentation on usages, defelopment and faqs, please visit our <a href="https://octave.atlassian.net/wiki/display/EXTDOCS/System+Information" target="_blank">online docs</a>.
+      </div>
+
+      <h2 id="install">Install</h2>
+      <ol>
+        <li><p>Extract the System Information zip package and use admin installer to upload <b>sysinfo.ocmod.zip</b></p></li>
+        <li><p>Set the group permission to allow access and modify Customer Summary at <b>System > Users > User Groups</b></p></li>
+        <li><p>Installation, go to <b>Extensions > Customer Summary</b> to trigger data installation/ update.</p></li>
+      </ol>
+      
+      <h2 id="update">Updates</h2>
+      <p>Update have same step as Installation</p>
+
+      <div style="padding:10px 0 20px; margin:30px -30px -10px; border:1px solid #ddd; border-left:0; border-right:0; background:#f8f8f8;">
+        <div class="text-center bs-margin-bottom-xs">
+          <small>Other Products by EchoThemes</small>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="pull-right">
+              <a href="http://www.echothemes.com/extensions/blog-manager-2.html" target="_blank">
+                <img src="docs/image/opencart-blog-manager-2.png" alt="" class="img-responsive">
+              </a>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="center-block" style="width:230px">
+              <a href="http://www.echothemes.com/extensions/customer-summary.html" target="_blank">
+                <img src="docs/image/opencart-customer-summary.png" alt="" class="img-responsive">
+              </a>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="pull-left">
+              <a href="http://www.opencart.com/index.php?route=extension/extension/info&extension_id=15550" target="_blank">
+                <img src="docs/image/opencart-shortcodes.png" alt="" class="img-responsive">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h2 id="changelog">Changelog</h2>
+      <span class="clg">*</span>Fixed<br>
+      <span class="clg">^</span>Improvements<br>
+      <span class="clg">+</span>New Feature<br>
+      <span class="clg">~</span>Deprecated<br>
+      <span class="clg">#</span>New Feature - Feedback Expected<br>
+
+      <ul class="list-unstyled docs-changelog">
+        <li>
+          <b>v. 2.1.1</b>
+          <ul class="list-unstyled">
+              <li><span class="clg">^</span>Move Sysinfo link under System</li>
+          </ul>
+        </li>
+        <li>
+          <b>v. 2.1.0</b>
+          <ul class="list-unstyled">
+              <li><span class="clg">+</span>Add phpinfo()</li>
+          </ul>
+        </li>
+        <li>
+          <b>v. 2.0.0</b>
+          <ul class="list-unstyled">
+              <li><span class="clg">^</span>OpenCart 2 compatibility</li>
+          </ul>
+        </li>
+        <li>
+          <b>v. 1.3.2</b>
+          <ul class="list-unstyled">
+              <li><span class="clg">*</span>MySQLi issue on OpenCart 1.5.4x and below</li>
+          </ul>
+        </li>
+        <li>
+          <b>v. 1.3.1</b>
+          <ul class="list-unstyled">
+              <li><span class="clg">*</span>Typo of safe mode status</li>
+          </ul>
+        </li>
+        <li>
+          <b>v. 1.3</b>
+          <ul class="list-unstyled">
+              <li><span class="clg">^</span>Support MySQL and MySQLi info</li>
+          </ul>
+        </li>
+        <li>
+          <b>v. 1.2</b>
+          <ul class="list-unstyled">
+              <li><span class="clg">*</span>Double check for Fsock</li>
+              <li><span class="clg">*</span>Table pushed when the path is to long</li>
+              <li><span class="clg">^</span>Hide vQmod file permission report if the file/ folder is not available</li>
+              <li><span class="clg">+</span>mCrypt check for OpenCart v1.5.4 and forward.</li>
+          </ul>
+        </li>
+        <li>
+          <b>v. 1.1</b>
+          <ul class="list-unstyled">
+              <li><span class="clg">*</span>Magic Quotes always return ON, in some server</li>
+              <li><span class="clg">+</span>Full phpinfo() check</li>
+              <li><span class="clg">+</span>More PHP Settings check</li>
+              <li><span class="clg">+</span>File permission (Error and vQmod logs)</li>
+          </ul>
+        </li>
+        <li>
+            <b>v. 1.0</b>
+            <ul class="list-unstyled"><li>Initial released.</li></ul>
+        </li>
+    </ul>
+    </div>
+  </div>
+  <div class="docs-footer">
+    Copyright © <a href="http://www.echothemes.com" title="EchoThemes site" target="_blank">EchoThemes</a>. All right reserved.
+  </div>
+</div>
+</body>
+</html>
