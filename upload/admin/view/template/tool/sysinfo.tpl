@@ -74,15 +74,13 @@
                     <td><?php echo $ftp ? $text_enable : $text_disable; ?></td>
                 </tr>
                 <tr>
+                    <td><?php echo $text_captcha; ?></td>
+                    <td><?php echo $captcha; ?></td>
+                </tr>
+                <tr>
                     <td><?php echo $text_currency; ?></td>
                     <td><?php echo $currency ? $text_enable : $text_disable; ?></td>
                 </tr>
-                <?php if (!is_null($fraud)) { ?>
-                    <tr>
-                        <td><?php echo $text_fraud; ?></td>
-                        <td><?php echo $fraud ? $text_enable : $text_disable; ?></td>
-                    </tr>
-                <?php } ?>
                 <tr>
                     <td><?php echo $text_error_display; ?></td>
                     <td><?php echo $error_display ? $text_enable : $text_disable; ?></td>
@@ -135,17 +133,21 @@
                 </tr>
                 <tr>
                     <td><?php echo $text_db_version; ?></td>
-                    <td><?php echo $db_server; // $this->db->getServerInfo(); ?></td>
+                    <td><?php echo $db_server; ?></td>
                 </tr>
                 <tr>
                     <td><?php echo $text_db_host; ?></td>
-                    <td><?php echo $db_host; // $this->db->getHostInfo(); ?></td>
+                    <td><?php echo $db_host; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo $text_db_name; ?></td>
+                    <td><?php echo DB_DATABASE; ?></td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
 
-    <h2 class="uk-section"><?php echo $section_php_setting; ?></h2>
+    <h2 class="uk-section"><?php echo $section_requirement; ?></h2>
 
     <table class="uk-table uk-table-striped uk-table-hover uk-text-center">
         <thead>
@@ -316,13 +318,15 @@
                 <td><?php echo substr(sprintf('%o', fileperms(DIR_MODIFICATION)), -3); ?></td>
                 <td><?php echo is_writable(DIR_MODIFICATION) ? '<span class="uk-badge uk-badge-success">' . $text_writable . '</span>' : '<span class="uk-badge uk-badge-danger">' . $text_unwritable . '</span>'; ?></td>
             </tr>
-            <?php if(file_exists('../vqmod/')) { ?>
-                <tr>
-                    <td class="uk-text-left"><?php echo '/vqmod/vqcache/'; ?></td>
-                    <td><?php echo substr(sprintf('%o', fileperms('../vqmod/vqcache')), -3); ?></td>
-                    <td><?php echo is_writable('../vqmod/vqcache') ? '<span class="uk-badge uk-badge-success">' . $text_writable . '</span>' : '<span class="uk-badge uk-badge-danger">' . $text_unwritable . '</span>'; ?></td>
-                </tr>                            
-                <?php if(file_exists('../vqmod/logs')) { ?>
+            <?php if (file_exists('../vqmod/')) { ?>
+                <?php if (file_exists('../vqmod/vqcache')) { ?>
+                    <tr>
+                        <td class="uk-text-left"><?php echo '/vqmod/vqcache/'; ?></td>
+                        <td><?php echo substr(sprintf('%o', fileperms('../vqmod/vqcache')), -3); ?></td>
+                        <td><?php echo is_writable('../vqmod/vqcache') ? '<span class="uk-badge uk-badge-success">' . $text_writable . '</span>' : '<span class="uk-badge uk-badge-danger">' . $text_unwritable . '</span>'; ?></td>
+                    </tr>
+                <?php } ?>                        
+                <?php if (file_exists('../vqmod/logs')) { ?>
                     <tr>
                         <td class="uk-text-left"><?php echo '/vqmod/logs/'; ?></td>
                         <td><?php echo substr(sprintf('%o', fileperms('../vqmod/logs')), -3); ?></td>

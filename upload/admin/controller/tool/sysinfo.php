@@ -38,7 +38,7 @@ class ControllerToolSysinfo extends Controller
         $data['seo']            = $this->config->get('config_seo_url');
         $data['maintenance']    = $this->config->get('config_maintenance');
         $data['compression']    = $this->config->get('config_compression');
-        $data['fraud']          = $this->config->get('config_fraud_detection');
+        $data['captcha']        = ucwords(str_replace('_', ' ', $this->config->get('config_captcha')));
         $data['mail']           = $this->config->get('config_mail_protocol');
         $data['ftp']            = $this->config->get('config_ftp_status');
         $data['currency']       = $this->config->get('config_currency_auto');
@@ -54,10 +54,7 @@ class ControllerToolSysinfo extends Controller
         $data['footer']     = $this->load->controller('common/footer');
 
         //=== Render
-        $template   = 'tool/sysinfo.tpl';
-        $render     = $this->load->view($template, $data);
-
-        $this->response->setOutput($render);
+        $this->response->setOutput($this->load->view('tool/sysinfo', $data));
     }
 
     public function phpinfo() {

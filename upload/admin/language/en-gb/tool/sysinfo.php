@@ -1,11 +1,12 @@
 <?php
 // Extensions Info
 $_['ext_name']                  = 'System Information';
-$_['ext_version']               = '2.1.1';
+$_['ext_version']               = '2.2.0';
 
 //=== Section
 $_['section_site_info']         = 'Site Info';
 $_['section_server_info']       = 'Server Info';
+$_['section_requirement']       = 'Requirements';
 $_['section_php_setting']       = 'PHP Settings';
 $_['section_permission']        = 'Permissions';
 $_['section_about']             = 'About';
@@ -17,7 +18,7 @@ $_['text_ssl']                  = 'SSL';
 $_['text_seo']                  = 'SEO URLs';
 $_['text_maintenance']          = 'Maintenance';
 $_['text_compression']          = 'Output Compression';
-$_['text_fraud']                = 'Fraud Detection';
+$_['text_captcha']              = 'Captcha';
 $_['text_mail']                 = 'Mail Protocol';
 $_['text_ftp']                  = 'FTP';
 $_['text_currency']             = 'Auto Update Currency';
@@ -33,6 +34,7 @@ $_['text_root_path']            = 'Root Path';
 $_['text_db_driver']            = 'Database Driver';
 $_['text_db_version']           = 'Database Server Version';
 $_['text_db_host']              = 'Database Host Info';
+$_['text_db_name']              = 'Database Name';
 $_['text_full_phpinfo']         = 'Full PHP configuration info:';
 
 $_['text_php_version']          = 'PHP Version';
