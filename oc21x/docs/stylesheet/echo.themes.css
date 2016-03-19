@@ -1,0 +1,112 @@
+/*
+* Name: Main Stylesheet
+* Author: EchoThemes
+* Author URL: http://www.echothemes.com
+* Copyright (c) 2011 - 2013  Echothemes. All right Reserved
+*/
+
+/* ---------- [ Reset ] ---------- */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
+body { line-height:1.25; }
+ol, ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none; }
+:focus { outline:0; }
+ins { text-decoration:none; }
+del { text-decoration:line-through; }
+table { border-collapse:collapse; border-spacing:0; }
+
+/* ---------- [ Basic Styles ] ---------- */
+body, td, th, li, input, textarea, select, a, p, div, span { font-family:Arial,Helvetica,sans-serif; font-size:13px; font-weight:300; line-height:20px; }
+body {color:#222; min-width:980px;}
+
+a, a:visited { color:#01459A; cursor:pointer; text-decoration:none; }
+a:hover { color:#e03f00; text-decoration:none; }
+a img { border:none; }
+p { padding-bottom:10px; }
+form { display:inline; }
+td {	vertical-align:top; padding:5px; }
+ul, ol { padding-bottom:10px; margin-left:35px; }
+ul ol, ol ol { margin:5px 0 10px 35px; padding-bottom:0; }
+ol { list-style-type: decimal; }
+ol.upper-latin { list-style-type:upper-latin;}
+ol.lower-latin { list-style-type:lower-latin;}
+ol.lower-roman { list-style-type:lower-roman;}
+ol li { margin-top:4px; }
+strong, b { font-weight:bold; }
+small { font-size:11px; }
+
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited  { padding-bottom:8px; color:#222; letter-spacing:-1px; line-height:125%; font-weight:normal; }
+h1, h2, h3, h4, h5, h6 { margin-top: 20px; }
+h3, h4, h5, h6 { margin-top: 5px; }
+h1, h1 a { font-size:26px; }
+h2, h2 a { font-size:22px; }
+h3, h3 a { font-size:20px; }
+h4, h4 a { font-size:18px; }
+h5, h5 a { font-size:16px; }
+h6, h6 a { font-size:14px; }
+
+/* http://css-tricks.com/snippets/css/clear-fix/ for IE8+ */
+.clearfix:after { content:""; display:table; clear:both; }
+/* use this for IE6+ http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+/* ---------- [ Layout ] ---------- */
+body { background: #f4f4f4; }
+.container { text-align:left; margin:0 auto; min-width:800px!important; width:850px; padding: 0 10px 35px; }
+
+.first { margin-left:0!important; }
+.column_1_2 { float:left; width:365px; margin-left:30px; }
+
+
+/* ---------- [ Header ] ---------- */
+#header { padding: 30px 10px 0; height:80px; z-index:4; position:relative; }
+
+/* ---------- [ Content ] ---------- */
+#content { min-height:300px; background:#fff; z-index:3; position:relative; padding:100px 35px 20px; min-height:125px; -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; -moz-box-shadow:0px 0px 3px #666; -webkit-box-shadow:0px 0px 3px #666; box-shadow:0px 0px 3px #666; }
+	#content > h1 { position:absolute; top:0; left:0; padding:13px 25px 0; height:56px; overflow:hidden; margin:0; text-shadow: 1px 1px 2px #444; width:800px; background: #043C87 url(../image/head.jpg) no-repeat top right; color: #fff; font-size: 25px; line-height:40px; -moz-border-radius:6px 6px 0 0; -webkit-border-radius:6px 6px 0 0; border-radius:6px 6px 0 0; }
+
+#content #infoTabs { height:29px; }
+	#content #infoTabs ul { margin:10px 0 0; padding:0; }
+	#content #infoTabs li { float:left; margin-left:10px; padding:0; }
+	#content #infoTabs ul a { display:block; padding:5px 15px 4px; color:#333; background:#e3eaf9; border-bottom:none; letter-spacing:1px; text-shadow:0 1px 1px #eee; -moz-border-radius:4px 4px 0 0; -webkit-border-radius:4px 4px 0 0; border-radius:4px 4px 0 0; }
+		#content #infoTabs ul a:hover { color:#222; background:#c8d6ff; }
+		#content #infoTabs ul a.selected { color:#222; font-size:14px; background:#c8d6ff; cursor:default; padding:7px 15px 6px; margin-top:-4px; }
+	#contentTabs { padding:30px 10px 20px; border-top:4px solid #c8d6ff; min-height:175px; }
+		#contentTabs .separator { height:15px; }
+			#contentTabs .separator a { cursor:default; }
+		#contentTabs ul ul { padding-bottom:0; }
+		#contentTabs .faqs, #contentTabs .troubleshoot { margin-left:15px; }
+			#contentTabs .faqs span.title, #contentTabs .troubleshoot span.title { font-weight:bold; display:block; margin-bottom:10px; }
+			#contentTabs .faqs li + li, #contentTabs .troubleshoot li + li { margin-top:10px; }
+		#contentTabs .changelog { margin-left:10px; }
+			#contentTabs .changelog ol li { margin-top:0; padding:0; }
+	#advert { padding:30px 0 10px; margin-top:10px; border-top:1px dashed #bbb; }
+		#advert a { padding:3px; background:#eee; border:1px solid #ddd; display:block; position:relative; }
+		#advert .banner { width:357px; }
+		#advert .badge-free { position:absolute; right:-9px; top:-5px;}
+	
+.imgFrame { padding:3px; background:#eee; border:1px solid #d4d4d4; margin:10px auto; display:block; }
+
+#changelog .clg { margin-right:12px; font-size:14px; display:inline-block; width:12px; line-height:12px; vertical-align:middle; }
+.changelog { margin-top:30px; }
+	.changelog li { margin-bottom:15px; }
+	.changelog li li { margin-bottom:0; }
+
+.success, .warning, .attention, .information, .wait { padding:5px 10px 5px 38px; margin:8px 0; font-size:12px; color:#444; }
+	p + .success, p + .warning, p + .attention, p + .information { margin:0 0 8px 0; }
+	.success a, .warning a, .attention a, .information a { font-size:12px; }
+	.success { background:#eaf7d9 url(../image/success.png) 10px center no-repeat; border:1px solid #bbdf8d; }
+	.warning { background:#ffd1d1 url(../image/warning.png) 10px center no-repeat; border:1px solid #f8acac; }
+	.attention { background:#fff5cc url(../image/attention.png) 10px center no-repeat; border:1px solid #edc228; }
+	.information{ background:#e1f0f9 url(../image/information.png) 10px center no-repeat; border:1px solid #a2d4ec; }
+	
+/* ---------- [ Footer ] ---------- */
+#footer { margin-top:10px; padding:0 15px; z-index:1; }
+	#footer, #footer a { color:#444; font-size:11px; }
+	#footer a:hover { color:#e03f00; }
+	
+/* ---------- [ Additional ] ---------- */
+/* Syntax Highlighter  */
+.syntaxhighlighter { }
+	.syntaxhighlighter table td.code .container { padding-bottom:5px !important; min-width:300px!important; }
