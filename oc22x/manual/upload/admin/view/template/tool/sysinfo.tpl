@@ -38,7 +38,7 @@
         <div class="uk-width-1-2">
             <table class="uk-table uk-table-striped uk-table-hover">
                 <tr>
-                    <td><?php echo $text_oc_version; ?></td>
+                    <td class="uk-width-3-5"><?php echo $text_oc_version; ?></td>
                     <td><?php echo VERSION; ?></td>
                 </tr>
                 <tr>
@@ -66,7 +66,7 @@
         <div class="uk-width-1-2">
             <table class="uk-table uk-table-striped uk-table-hover">
                 <tr>
-                    <td><?php echo $text_mail; ?></td>
+                    <td class="uk-width-3-5"><?php echo $text_mail; ?></td>
                     <td><?php echo ucwords($mail); ?></td>
                 </tr>
                 <tr>
@@ -101,13 +101,12 @@
     <table class="uk-table uk-table-striped uk-table-hover">
         <thead>
             <tr>
-                <th class="uk-width-3-10"><?php echo $text_point; ?></th>
-                <th><?php echo $text_value; ?></th>
+                <th colspan="2"><?php echo $text_machine; ?></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><?php echo $text_operating_sys; ?></td>
+                <td class="uk-width-3-10"><?php echo $text_operating_sys; ?></td>
                 <td><?php echo php_uname(); ?></td>
             </tr>
             <tr>
@@ -122,13 +121,19 @@
                 <td><?php echo $text_root_path; ?></td>
                 <td><?php echo $_SERVER["DOCUMENT_ROOT"]; ?></td>
             </tr>
-            <?php if (in_array(DB_DRIVER, array('mysql', 'mysqli'))) { ?>
+        </tbody>
+    </table>
+    
+    <?php if (in_array(DB_DRIVER, array('mysql', 'mysqli'))) { ?>
+        <table class="uk-table uk-table-striped uk-table-hover">
+            <thead>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <th colspan="2"><?php echo $text_database; ?></th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
-                    <td><?php echo $text_db_driver; ?></td>
+                    <td class="uk-width-3-10"><?php echo $text_db_driver; ?></td>
                     <td><?php echo strtoupper(DB_DRIVER); ?></td>
                 </tr>
                 <tr>
@@ -143,7 +148,46 @@
                     <td><?php echo $text_db_name; ?></td>
                     <td><?php echo DB_DATABASE; ?></td>
                 </tr>
-            <?php } ?>
+            </tbody>
+        </table>
+    <?php } ?>
+
+    <table class="uk-table uk-table-striped uk-table-hover">
+        <thead>
+            <tr>
+                <th colspan="2"><?php echo $text_timezone; ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="uk-width-3-10"><?php echo $text_ini_timezone; ?></td>
+                <td><?php echo ini_get('date.timezone'); ?> <?php echo !ini_get('date.timezone') ? '- <span class="uk-text-small uk-text-muted">( ' . $text_not_set . ' )</span>' : ''; ?></td>
+            </tr>
+            <tr>
+                <td><?php echo $text_php_timezone; ?></td>
+                <td><?php echo date_default_timezone_get(); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo $text_db_timezone; ?></td>
+                <td><?php echo $db_timezone; ?> <?php echo $db_timezone == 'SYSTEM' ? '<span class="uk-text-small uk-text-muted">( ' . $text_os_timezone . ' )</span>' : ''; ?></td>
+            </tr>
+            <tr><td></td><td></td></tr>
+            <tr>
+                <td><?php echo $text_php_date_now; ?></td>
+                <td><?php echo date('l, F d, Y'); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo $text_php_time_now; ?></td>
+                <td><?php echo date('h:i:s A'); ?></td>
+            </tr>
+            <tr>
+                <td>Database Date Now</td>
+                <td><?php echo date('l, F d, Y', strtotime($db_datetime)); ?></td>
+            </tr>
+            <tr>
+                <td>Database Time Now</td>
+                <td><?php echo date('h:i:s A', strtotime($db_datetime)); ?></td>
+            </tr>
         </tbody>
     </table>
 
@@ -228,7 +272,7 @@
         <tbody>
             <?php if (in_array(DB_DRIVER, array('mysql', 'mysqli'))) { ?>
                 <tr>
-                    <td class="uk-text-left"><?php echo sprintf($text_database, strtoupper(DB_DRIVER)); ?></td>
+                    <td class="uk-text-left"><?php echo sprintf($text_database_type, strtoupper(DB_DRIVER)); ?></td>
                     <td><?php echo $text_on; ?></td>
                     <td><?php echo extension_loaded(DB_DRIVER) ? 'On' : '<span class="uk-badge uk-badge-danger">'.$text_off.'</span>'; ?></td>
                     <td><?php echo extension_loaded(DB_DRIVER) ? '<i class="uk-icon-check uk-icon-small uk-text-success"></i>' : '<i class="uk-icon-times uk-icon-small uk-text-danger"></i>'; ?></td>
@@ -325,7 +369,7 @@
                         <td><?php echo substr(sprintf('%o', fileperms('../vqmod/vqcache')), -3); ?></td>
                         <td><?php echo is_writable('../vqmod/vqcache') ? '<span class="uk-badge uk-badge-success">' . $text_writable . '</span>' : '<span class="uk-badge uk-badge-danger">' . $text_unwritable . '</span>'; ?></td>
                     </tr>
-                <?php } ?>                        
+                <?php } ?>
                 <?php if (file_exists('../vqmod/logs')) { ?>
                     <tr>
                         <td class="uk-text-left"><?php echo '/vqmod/logs/'; ?></td>

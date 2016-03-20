@@ -48,6 +48,11 @@ class ControllerToolSysinfo extends Controller
         $data['db_server']      = $this->db->getServerInfo();
         $data['db_host']        = $this->db->getHostInfo();
 
+        $query = $this->db->query('SELECT @@session.time_zone as timezone, now() as `datetime`;');
+
+        $data['db_timezone']    = $query->row['timezone'];
+        $data['db_datetime']    = $query->row['datetime'];
+
         //=== H-MVC
         $data['header']     = $this->load->controller('common/header');
         $data['menu']       = $this->load->controller('common/column_left');
