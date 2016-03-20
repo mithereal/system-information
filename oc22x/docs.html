@@ -33,25 +33,59 @@
     </div>
     <div class="panel-body">
       <h4 class="bs-margin-top-xs">Table of Contents</h4>
-      <ul class="list-unstyled docs-list">
-        <li><a href="#install">Install</a></li>
+      <ul class="list-unstyled">
+        <li><a href="#install">Installation</a>
+          <ul type="disc">
+            <li><a href="#extension-installer">Extension Installer</a></li>
+            <li><a href="#manual-install">Manual Install</a></li>
+          </ul>
+        </li>
         <li><a href="#update">Updates</a></li>
         <li><a href="#changelog">Changelog</a></li>
       </ul>
 
       <div class="alert alert-info">
-        For complete documentation on usages, defelopment and faqs, please visit our <a href="https://octave.atlassian.net/wiki/display/EXTDOCS/System+Information" target="_blank">online docs</a>.
+        For usages, defelopment and faqs, please visit our <a href="https://octave.atlassian.net/wiki/display/EXTDOCS/System+Information" target="_blank">online docs</a>.
       </div>
 
-      <h2 id="install">Install</h2>
-      <ol>
-        <li><p>Extract the System Information zip package and use admin installer to upload <b>sysinfo.ocmod.zip</b></p></li>
-        <li><p>Set the group permission to allow Access at <b>System > Users > User Groups</b></p></li>
-        <li><p>On left sidebar find "SI" icon to use System Information.</p></li>
+      <h2 id="install">Installation</h2>
+      <h4 id="extension-installer" style="margin-top:0;">Extension Installer</h4>
+      <ol type="1">
+        <li><p><b>Uploading</b></p>
+          <p>Go to <code>Extensions > Extension Installer</code> and upload file <b>installer/sysinfo.ocmod.zip</b>.</p>
+          <p class="small"><span class="label label-danger">NOTE</span> If you previously have System Information installed, you will see replace file list. Proceed to replace them.</p>
+          <p class="small"><span class="label label-danger">NOTE</span> If you get warning <i>"using the same ID code as the one you are trying to upload!"</i> mean you installing same version. Click the clear button and no need to proceed.</p>
+        </li>
+        <li><p><b>Pre-installation</b></p>
+          <ol type="a">
+            <li><p>Go to <code>Extensions > Modifications</code>, refresh modification to generate new modification cache.</p>
+                <p class="small"><span class="label label-danger">NOTE</span> If you see modification with same name, delete the one with lower version before refresh modification.</p>
+            </li>
+            <li><p>Go to <code>System > Users > User Groups</code>, open your user group. Check <b>Access</b> and <b>Modify</b> permission for <b>System Information</b>.</p></li>
+          </ol>
+        </li>
+        <li><p><b>Installation</b></p>
+          <ol>
+            <li><p>Find <code>SI</code> icon on left menu, click to open System Information.</p></li>
+          </ol>
+        </li>
       </ol>
-      
-      <h2 id="update">Updates</h2>
-      <p>Update have same step as Installation</p>
+
+      <h4 id="manual-install">Manual Install</h4>
+      <p>If you have issues using Extension Installer, proceed with this manual installation.</p>
+      <ol type="1">
+        <li><p><b>Upload Files</b></p>
+          <p>Use FTP software and upload <b>manual/upload</b> to your site root.</p>
+          <p class="small"><span class="label label-danger">NOTE</span> Do not upload the folder <code>upload/</code>, but folders <b>inside</b> it.</p>
+        </li>
+        <li><p><b>Upload OcMod</b></p>
+          <p>Go to <code>Extensions > Extension Installer</code> and upload file <b>manual/sysinfo.ocmod.xml</b>.</p>
+          <p class="small"><span class="label label-danger">NOTE</span> If you get warning <i>"using the same ID code as the one you are trying to upload!"</i> mean you installing same version. Click the clear button and no need to proceed.</p>
+        </li>
+        <li><p><b>Installation</b></p>
+          <p>Next installation step is the same as <b>Extension Installer</b>: Pre-installation and Installation.</p>
+        </li>
+      </ol>
 
       <div style="padding:10px 0 20px; margin:30px -30px -10px; border:1px solid #ddd; border-left:0; border-right:0; background:#f8f8f8;">
         <div class="text-center bs-margin-bottom-xs">
@@ -74,89 +108,19 @@
           </div>
           <div class="col-xs-4">
             <div class="pull-left">
-              <a href="http://www.opencart.com/index.php?route=extension/extension/info&extension_id=15550" target="_blank">
-                <img src="docs/image/opencart-shortcodes.png" alt="" class="img-responsive">
+              <a href="http://www.opencart.com/index.php?route=extension/extension/info&extension_id=21411" target="_blank">
+                <img src="docs/image/opencart-default2.png" alt="" class="img-responsive">
               </a>
             </div>
           </div>
         </div>
       </div>
-      
-      <h2 id="changelog">Changelog</h2>
-      <span class="clg">*</span>Fixed<br>
-      <span class="clg">^</span>Improvements<br>
-      <span class="clg">+</span>New Feature<br>
-      <span class="clg">~</span>Deprecated<br>
-      <span class="clg">#</span>New Feature - Feedback Expected<br>
 
-      <ul class="list-unstyled docs-changelog">
-        <li>
-          <b>v. 2.2.0</b>
-          <ul class="list-unstyled">
-              <li><span class="clg">^</span>OpenCart 2.2.0 compability</li>
-              <li><span class="clg">^</span>Replace vQmod with OcMod</li>
-              <li><span class="clg">+</span>Database name at Server Info</li>
-          </ul>
-        </li>
-        <li>
-          <b>v. 2.1.1</b>
-          <ul class="list-unstyled">
-              <li><span class="clg">^</span>Move Sysinfo link under System</li>
-          </ul>
-        </li>
-        <li>
-          <b>v. 2.1.0</b>
-          <ul class="list-unstyled">
-              <li><span class="clg">+</span>Add phpinfo()</li>
-          </ul>
-        </li>
-        <li>
-          <b>v. 2.0.0</b>
-          <ul class="list-unstyled">
-              <li><span class="clg">^</span>OpenCart 2 compatibility</li>
-          </ul>
-        </li>
-        <li>
-          <b>v. 1.3.2</b>
-          <ul class="list-unstyled">
-              <li><span class="clg">*</span>MySQLi issue on OpenCart 1.5.4x and below</li>
-          </ul>
-        </li>
-        <li>
-          <b>v. 1.3.1</b>
-          <ul class="list-unstyled">
-              <li><span class="clg">*</span>Typo of safe mode status</li>
-          </ul>
-        </li>
-        <li>
-          <b>v. 1.3</b>
-          <ul class="list-unstyled">
-              <li><span class="clg">^</span>Support MySQL and MySQLi info</li>
-          </ul>
-        </li>
-        <li>
-          <b>v. 1.2</b>
-          <ul class="list-unstyled">
-              <li><span class="clg">*</span>Double check for Fsock</li>
-              <li><span class="clg">*</span>Table pushed when the path is to long</li>
-              <li><span class="clg">^</span>Hide vQmod file permission report if the file/ folder is not available</li>
-              <li><span class="clg">+</span>mCrypt check for OpenCart v1.5.4 and forward.</li>
-          </ul>
-        </li>
-        <li>
-          <b>v. 1.1</b>
-          <ul class="list-unstyled">
-              <li><span class="clg">*</span>Magic Quotes always return ON, in some server</li>
-              <li><span class="clg">+</span>Full phpinfo() check</li>
-              <li><span class="clg">+</span>More PHP Settings check</li>
-              <li><span class="clg">+</span>File permission (Error and vQmod logs)</li>
-          </ul>
-        </li>
-        <li>
-            <b>v. 1.0</b>
-            <ul class="list-unstyled"><li>Initial released.</li></ul>
-        </li>
-    </ul>
+      <h2 id="update">Updates</h2>
+      <p>Update have same step as Installation</p>
+
+      <h2 id="changelog">Changelog</h2>
+      <p>Changelog available <a href="https://octave.atlassian.net/wiki/display/EXTDOCS/SI+Changelog" target="_blank">here</a>.</p>
     </div>
   </div>
   <div class="docs-footer">
