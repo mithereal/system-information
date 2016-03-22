@@ -45,6 +45,13 @@ class ControllerToolSysinfo extends Controller
         $data['error_display']  = $this->config->get('config_error_display');
         $data['error_log']      = $this->config->get('config_error_log');
 
+        if (!$data['mail']) {
+            $config_mail = $this->config->get('config_mail');
+            if (!empty($config_mail['protocol'])) {
+                $data['mail'] = $config_mail['protocol'];
+            }
+        }
+
         $data['db_server']      = $this->db->getServerInfo();
         $data['db_host']        = $this->db->getHostInfo();
 
