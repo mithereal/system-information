@@ -41,6 +41,14 @@
                     <td class="uk-width-3-5"><?php echo $text_oc_version; ?></td>
                     <td><?php echo VERSION; ?></td>
                 </tr>
+                 <tr>
+                    <td><?php echo $text_revision; ?></td>
+                    <td><?php echo $revision; ?></td>
+                </tr>
+                 <tr>
+                    <td><?php echo $text_repo; ?></td>
+                    <td><a target = "_blank" href="<?php echo $repo_url; ?>"><?php echo $repo; ?></a></td>
+                </tr>
                 <tr>
                     <td><?php echo $text_stores; ?></td>
                     <td><?php echo $stores; ?></td>
@@ -57,10 +65,8 @@
                     <td><?php echo $text_maintenance; ?></td>
                     <td><?php echo $maintenance ? $text_enable : $text_disable; ?></td>
                 </tr>
-                <tr>
-                    <td><?php echo $text_compression; ?></td>
-                    <td><?php echo $compression; ?></td>
-                </tr>
+             
+                 
             </table>
         </div>
         <div class="uk-width-1-2">
@@ -90,6 +96,10 @@
                 <tr>
                     <td><?php echo $text_error_log; ?></td>
                     <td><?php echo $error_log ? $text_enable : $text_disable; ?></td>
+                </tr>
+               <tr>
+                    <td><?php echo $text_compression; ?></td>
+                    <td><?php echo $compression; ?></td>
                 </tr>
             </table>
         </div>

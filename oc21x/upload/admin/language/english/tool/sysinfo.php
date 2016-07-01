@@ -62,6 +62,10 @@ $_['text_mcrypt']               = 'mCrypt';
 $_['text_file_uploads']         = 'File Uploads';
 $_['text_session_start']        = 'Session Auto Start';
 $_['text_session_cookies']      = 'Cookies';
+$_['text_revision']    		  = 'Revision';
+$_['text_repo']     			 = 'Repository';
+$_['repo_url']     			 = '';
+$_['repo']     			 = 'bitbucket';
 
 $_['text_database_type']        = 'Database (%s)';
 $_['text_gd']                   = 'GD';

@@ -8,7 +8,12 @@ class ControllerToolSysinfo extends Controller
         $data += $this->load->language('tool/sysinfo');
 
         $this->load->model('setting/store');
-
+        $this->load->helper('quickgit');
+        
+        $git = new Quickgit;
+        $version = $git->output();
+		$data['revision']         = $version['short'];
+		
         //=== Document
         $this->document->setTitle($this->language->get('ext_name'));
 
