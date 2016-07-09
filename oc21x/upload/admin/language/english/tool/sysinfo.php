@@ -67,7 +67,8 @@ $_['text_repo']     			 = 'Repository';
 $_['repo_url']     			 = '';
 $_['repo']     			 = 'bitbucket';
 $_['revision_type']     			 = 'short';
-
+$_['repo_enabled']     			 = 'yes';
+$_['git_enabled']     			 = 'yes';
 $_['text_database_type']        = 'Database (%s)';
 $_['text_gd']                   = 'GD';
 $_['text_curl']                 = 'Curl';

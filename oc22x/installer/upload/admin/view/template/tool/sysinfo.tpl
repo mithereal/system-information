@@ -41,14 +41,19 @@
                     <td class="uk-width-3-5"><?php echo $text_oc_version; ?></td>
                     <td><?php echo VERSION; ?></td>
                 </tr>
+                  <?php if(strtolower($git_enabled)) == 'yes'){ ?>
                  <tr>
                     <td><?php echo $text_revision; ?></td>
                     <td><?php echo $revision; ?></td>
                 </tr>
+                <?php } ?>
+                
+                 <?php if(strtolower($repo_enabled)) == 'yes'){ ?>
                  <tr>
                     <td><?php echo $text_repo; ?></td>
                     <td><a target = "_blank" href="<?php echo $repo_url; ?>"><?php echo $repo; ?></a></td>
                 </tr>
+                <?php } ?>
                 <tr>
                     <td><?php echo $text_stores; ?></td>
                     <td><?php echo $stores; ?></td>

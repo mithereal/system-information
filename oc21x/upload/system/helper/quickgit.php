@@ -14,7 +14,7 @@ function __construct() {
 			$this->version['full'] = $branch[0].".".trim($version_number[0]).".$version_mini_hash[0] (".str_replace('commit ','',$line[0]).")";
 			$this->version['error']= '';
 			}else{
-			$this->version['error']="Ooops there was an Error: [ ". $error ." ]";
+			$this->version['error']="Error: [ git is unavailable ]";
 			}
 	}else{
 		$this->version['error']="Error: [ exec not enabled ]";
