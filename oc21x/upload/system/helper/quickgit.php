@@ -12,7 +12,7 @@ function __construct() {
 			$this->version['branch'] = $branch[0];
 			$this->version['short'] = $branch[0].".".trim($version_number[0]).".".$version_mini_hash[0];
 			$this->version['full'] = $branch[0].".".trim($version_number[0]).".$version_mini_hash[0] (".str_replace('commit ','',$line[0]).")";
-			
+			$this->version['error']= '';
 			}else{
 			$this->version['error']="Ooops there was an Error: [ ". $error ." ]";
 			}

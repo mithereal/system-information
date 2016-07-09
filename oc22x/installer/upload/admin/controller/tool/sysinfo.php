@@ -12,7 +12,7 @@ class ControllerToolSysinfo extends Controller
         
         $git = new Quickgit;
         $version = $git->output();
-		$type = strtolower($data['revision_type']);
+       	$type = strtolower($data['revision_type']);
 		$data['revision']         = array_key_exists ( $type , $version ) ? $version[$type] : $version['error'];
 		
         //=== Document
@@ -44,19 +44,12 @@ class ControllerToolSysinfo extends Controller
         $data['seo']            = $this->config->get('config_seo_url');
         $data['maintenance']    = $this->config->get('config_maintenance');
         $data['compression']    = $this->config->get('config_compression');
-        $data['fraud']          = $this->config->get('config_fraud_detection');
+        $data['captcha']        = ucwords(str_replace('_', ' ', $this->config->get('config_captcha')));
         $data['mail']           = $this->config->get('config_mail_protocol');
         $data['ftp']            = $this->config->get('config_ftp_status');
         $data['currency']       = $this->config->get('config_currency_auto');
         $data['error_display']  = $this->config->get('config_error_display');
         $data['error_log']      = $this->config->get('config_error_log');
-
-        if (!$data['mail']) {
-            $config_mail = $this->config->get('config_mail');
-            if (!empty($config_mail['protocol'])) {
-                $data['mail'] = $config_mail['protocol'];
-            }
-        }
 
         $data['db_server']      = $this->db->getServerInfo();
         $data['db_host']        = $this->db->getHostInfo();
@@ -72,10 +65,7 @@ class ControllerToolSysinfo extends Controller
         $data['footer']     = $this->load->controller('common/footer');
 
         //=== Render
-        $template   = 'tool/sysinfo.tpl';
-        $render     = $this->load->view($template, $data);
-
-        $this->response->setOutput($render);
+        $this->response->setOutput($this->load->view('tool/sysinfo', $data));
     }
 
     public function phpinfo() {

@@ -1,7 +1,7 @@
 <?php
 // Extensions Info
 $_['ext_name']                  = 'System Information';
-$_['ext_version']               = '2.1.3';
+$_['ext_version']               = '2.3.0';
 
 //=== Section
 $_['section_site_info']         = 'Site Info';
@@ -18,7 +18,7 @@ $_['text_ssl']                  = 'SSL';
 $_['text_seo']                  = 'SEO URLs';
 $_['text_maintenance']          = 'Maintenance';
 $_['text_compression']          = 'Output Compression';
-$_['text_fraud']                = 'Fraud Detection';
+$_['text_captcha']              = 'Captcha';
 $_['text_mail']                 = 'Mail Protocol';
 $_['text_ftp']                  = 'FTP';
 $_['text_currency']             = 'Auto Update Currency';
@@ -48,10 +48,6 @@ $_['text_php_time_now']         = 'PHP Time Now';
 $_['text_db_date_now']          = 'Database Date Now';
 $_['text_db_time_now']          = 'Database Time Now';
 
-$_['text_timezone']             = 'Timezone';
-$_['text_date_now']             = 'Current Date';
-$_['text_time_now']             = 'Current Time';
-
 $_['text_php_version']          = 'PHP Version';
 $_['text_req_php_version']      = '>= 5.3';
 $_['text_safe_mode']            = 'Safe Mode';
@@ -65,9 +61,8 @@ $_['text_session_cookies']      = 'Cookies';
 $_['text_revision']    		  = 'Revision';
 $_['text_repo']     			 = 'Repository';
 $_['repo_url']     			 = '';
-$_['repo']     			 = 'bitbucket';
+$_['repo']     			 = 'github';
 $_['revision_type']     			 = 'short';
-
 $_['text_database_type']        = 'Database (%s)';
 $_['text_gd']                   = 'GD';
 $_['text_curl']                 = 'Curl';

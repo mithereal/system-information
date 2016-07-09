@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <name>System Information</name>
+    <version>2.3.0</version>
+    <code>sysinfo_2.3.0</code>
+    <author>EchoThemes</author>
+    <link>http://www.echothemes.com</link>
+
+    <file path="admin/controller/common/menu.php">
+        <operation info="Add menu">
+            <search><![CDATA[$this->load->view('common/menu', $data)]]></search>
+            <add position="before"><![CDATA[
+                $data['text_sysinfo']   = 'System Information';
+                $data['url_sysinfo']    = $this->url->link('tool/sysinfo', 'token=' . $this->session->data['token'], 'SSL');
+            ]]></add>
+        </operation>
+    </file>
+    <file path="admin/view/template/common/menu.tpl">
+        <operation>
+            <search><![CDATA[<li id="reports">]]></search>
+            <add position="before"><![CDATA[<li id="customer-summary"><a href="<?php echo $url_sysinfo; ?>"><i class="fa" style="width:22px;font-family:arial;font-size:16px;">SI</i><span><?php echo $text_sysinfo; ?></span></a></li>]]></add>
+        </operation>
+    </file>
+
+    <file path="system/library/db.php">
+        <operation>
+            <search><![CDATA[public function getLastId()]]></search>
+            <add position="before"><![CDATA[
+            public function getServerInfo() {
+                return $this->adaptor->getServerInfo();
+            }
+            public function getHostInfo() {
+                return $this->adaptor->getHostInfo();
+            }
+            ]]></add>
+        </operation>
+    </file>
+    <file path="system/library/db/mysql.php">
+        <operation>
+            <search><![CDATA[public function getLastId()]]></search>
+            <add position="before"><![CDATA[
+            public function getServerInfo() {
+                if ($this->link) {
+                    return mysql_get_server_info();
+                }
+            }
+            public function getHostInfo() {
+                if ($this->link) {
+                    return mysql_get_host_info();
+                }
+            }
+            ]]></add>
+        </operation>
+    </file>
+    <file path="system/library/db/mysqli.php">
+        <operation>
+            <search><![CDATA[public function getLastId()]]></search>
+            <add position="before"><![CDATA[
+            public function getServerInfo() {
+                return $this->connection->server_info;
+            }
+            public function getHostInfo() {
+                return $this->connection->host_info;
+            }
+            ]]></add>
+        </operation>
+    </file>
+</modification>
